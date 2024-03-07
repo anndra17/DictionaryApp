@@ -4,9 +4,26 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DictionaryApp"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        WindowStartupLocation="CenterScreen"
+        Topmost="True"
+        Language="ro"
+        Icon="C:\Users\andra\Documents\Facultate\II\sem II\MVP\Teme\RezolvariTeme\DictionaryApp\DictionaryApp\Resources\app-icon.png"
+        Title="DEX" Height="450" Width="800"
+        Background="{DynamicResource WindowBackgroundBrush}">
+    <Window.Resources>
+        <LinearGradientBrush x:Key="WindowBackgroundBrush">
+            <GradientStop Offset="0" Color="Beige"/>
+            <GradientStop Offset="1" Color="tan"/>
+        </LinearGradientBrush>
         
+    </Window.Resources>
+    <Grid Visibility="Visible">
+        <Label x:Name="InputLabel" FontSize="28" FontFamily="Microsoft Sans Serif" FontWeight="ExtraBold"  VerticalAlignment="Top" HorizontalAlignment="Center"  Margin="0,34,0,0" Content="Dicționar explicativ" Width="262" Height="54" />
+        <TextBox x:Name="InputBox"  Margin="221,115,0,0" TextWrapping="Wrap" Text="Caută cuvânt" Padding="3" TextAlignment="Left" BorderBrush="Tan"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="310" Height="25"/>
+        <Button x:Name="InputButton" Content="Caută" HorizontalAlignment="Left" BorderBrush="Tan" Foreground="Tan" Background="Black" Margin="538,115,0,0" VerticalAlignment="Top"  Width="60" Height="25" Click="InputButton_Click"/>
+        <TextBox x:Name="ResultBox" HorizontalAlignment="Center" BorderBrush="Tan" Margin="0,164,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="600" Height="200"/>
+
     </Grid>
 </Window>
