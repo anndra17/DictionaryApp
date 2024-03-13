@@ -1,0 +1,39 @@
+﻿<Window x:Class="DictionaryApp.DictionaryManager"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DictionaryApp"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Topmost="True"
+        Language="ro"
+        Icon="C:\Users\andra\Documents\Facultate\II\sem II\MVP\Teme\RezolvariTeme\DictionaryApp\DictionaryApp\Resources\admin-icon.png"
+        Title="Administrare" Height="450" Width="800"
+        Background="{DynamicResource WindowBackgroundBrush}">
+
+    <Window.Resources>
+        <LinearGradientBrush x:Key="WindowBackgroundBrush">
+            <GradientStop Offset="0" Color="Beige"/>
+            <GradientStop Offset="1" Color="tan"/>
+        </LinearGradientBrush>
+    </Window.Resources>
+    <Grid>
+        <Grid x:Name="AuthentificationPanel" Visibility="Visible">
+
+            <Label x:Name="AuthentificationLabel" FontSize="28" FontFamily="Microsoft Sans Serif" FontWeight="ExtraBold"  VerticalAlignment="Top" HorizontalAlignment="Center" Content="Autentificare" Width="174" Height="54" Margin="0,55,0,0" />
+            <TextBlock x:Name="UsernameTxt" HorizontalAlignment="Center" Margin="0,122,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="108"><Run Text="Nume de utilizator"/><Run Language="ro-ro" Text=":"/></TextBlock>
+            <TextBox x:Name="UsernameBox"  Margin="0,143,0,0" TextWrapping="Wrap" Padding="3" TextAlignment="Left" BorderBrush="Tan"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="250" Height="25" PreviewMouseLeftButtonDown="UsernameBox_PreviewMouseLeftButtonDown"/>
+
+            <TextBlock x:Name="PasswordTxt" HorizontalAlignment="Center" Margin="0,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="36"><Run Text="Parol"/><Run Text="ă"/><Run Language="ro-ro" Text=":"/></TextBlock>
+            <PasswordBox x:Name="PasswordBox" HorizontalAlignment="Center" VerticalAlignment="Top"  Width="250" Height="24" BorderBrush="Tan" PreviewMouseLeftButtonDown="PasswordBox_PreviewMouseLeftButtonDown" Margin="0,193,0,0"/>
+
+            <Button x:Name="LoginButton" Content="Conectare" HorizontalAlignment="Center" BorderBrush="Tan" Foreground="Tan" Background="Black" Margin="0,233,0,0" VerticalAlignment="Top"  Width="132" Height="24" Click="LoginButton_Click" />
+            <Label x:Name="ErrorMessageLabel" Content="Invalid username or password." Margin="0,270,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="250" Height="25" Foreground="Red" Visibility="Collapsed" />
+        </Grid>
+
+        <Grid x:Name="DictionaryManagerPanel" Visibility="Collapsed">
+
+        </Grid>
+    </Grid>
+</Window>

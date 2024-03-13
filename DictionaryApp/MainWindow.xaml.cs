@@ -20,92 +20,31 @@ namespace DictionaryApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly string _adminUsername = "admin";
-        private readonly string _userUsername = "user";
+        
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void InputButton_Click(object sender, EventArgs e)
+        private void Admin_Button_Click(object sender, RoutedEventArgs e)
         {
-            var My_Dictionary = new Dictionary<string, string>()
-            {
-                {"masă", "O piesă de mobilier pentru luat masa"},
-                {"soare", "Sursă principală de lumină și căldură pentru Pământ"},
-                {"câine", "Un animal domestic din familia canidelor"},
-                {"carte", "Un obiect cu pagini scrise, legate împreună"},
-                {"munte", "O înălțime naturală, cu vârf ascuțit"},
-                {"computer", "Un dispozitiv electronic pentru prelucrarea informațiilor"},
-                {"floare", "O parte a unei plante, adesea colorată și parfumată"},
-                {"școală", "O instituție de învățământ"},
-                {"râu", "Un curs de apă natural, mai mic decât un fluviu"},
-                {"pian", "Un instrument muzical cu clape"},
-                {"paraxin", "Bizar, ciudat, curios." }
-            };
-
-            string word;
-            word = InputBox.Text;
-
-            try
-            {
-                ResultBox.Text = My_Dictionary[word];
-            }
-            catch
-            {
-                ResultBox.Text = "Scuze! Cuvântul nu a fost găsit!";
-            }
+            DictionaryManager dm = new DictionaryManager();
+            dm.Show();
+            this.Close();
         }
 
-        private void InputBox_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void WordSearch_Button_Click(object sender, RoutedEventArgs e)
         {
-            TextBox textBox = sender as TextBox;
-
-            if (textBox != null)
-            {
-                textBox.Text = string.Empty;
-            }
+            WordSearch ws = new WordSearch();
+            ws.Show();
+            this.Close();
         }
 
-        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        private void Entertainment_Button_Click(object sender, RoutedEventArgs e)
         {
-            string username = UsernameBox.Text;
-            string password = PasswordBox.Text;
-
-            if (username == _adminUsername && password == "0000")
-            {
-                DictionaryManagerPanel.Visibility = Visibility.Visible;
-                AuthentificationPanel.Visibility = Visibility.Hidden;
-            }
-            else if (username == _userUsername && password == "0000") 
-            {
-                WordSearchPanel.Visibility = Visibility.Visible;
-                AuthentificationPanel.Visibility = Visibility.Hidden;
-            }
-            else
-            {
-                ErrorMessageLabel.Visibility = Visibility.Visible;
-            }
-        }
-
-        private void PasswordBox_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            TextBox textBox = sender as TextBox;
-
-            if (textBox != null)
-            {
-                textBox.Text = string.Empty;
-            }
-        }
-
-        private void UsernameBox_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            TextBox textBox = sender as TextBox;
-
-            if (textBox != null)
-            {
-                textBox.Text = string.Empty;
-            }
+            Entertainment ent = new Entertainment();
+            ent.Show();
+            this.Close();
         }
     }
 }
