@@ -17,13 +17,38 @@
             <GradientStop Offset="0" Color="Beige"/>
             <GradientStop Offset="1" Color="tan"/>
         </LinearGradientBrush>
-        
-    </Window.Resources>
-    <Grid Visibility="Visible">
-        <Label x:Name="InputLabel" FontSize="28" FontFamily="Microsoft Sans Serif" FontWeight="ExtraBold"  VerticalAlignment="Top" HorizontalAlignment="Center"  Margin="0,34,0,0" Content="Dicționar explicativ" Width="262" Height="54" />
-        <TextBox x:Name="InputBox"  Margin="221,115,0,0" TextWrapping="Wrap" Text="Caută cuvânt" Padding="3" TextAlignment="Left" BorderBrush="Tan"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="310" Height="25"/>
-        <Button x:Name="InputButton" Content="Caută" HorizontalAlignment="Left" BorderBrush="Tan" Foreground="Tan" Background="Black" Margin="538,115,0,0" VerticalAlignment="Top"  Width="60" Height="25" Click="InputButton_Click"/>
-        <TextBox x:Name="ResultBox" HorizontalAlignment="Center" BorderBrush="Tan" Margin="0,164,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="600" Height="200"/>
 
+
+    </Window.Resources>
+
+    <Grid>
+        <Grid x:Name="MainPanel" Visibility="Visible">
+            <Button Content="Administrator" HorizontalAlignment="Left" Margin="100,100,0,0" VerticalAlignment="Top" Height="200" Width="170"/>
+            <Button Content="Cautare Cuvinte" HorizontalAlignment="Left" Margin="328,100,0,0" VerticalAlignment="Top" Height="200" Width="170"/>
+            <Button Content="Divertisment" HorizontalAlignment="Left" Margin="553,100,0,0" VerticalAlignment="Top" Height="200" Width="170"/>
+
+        </Grid>
+        <Grid x:Name="AuthentificationPanel" Visibility="Collapsed">
+            <Label x:Name="AuthentificationLabel" FontSize="28" FontFamily="Microsoft Sans Serif" FontWeight="ExtraBold"  VerticalAlignment="Top" HorizontalAlignment="Center" Content="Autentificare" Width="174" Height="54" Margin="0,110,0,0" />
+            <TextBox x:Name="UsernameBox"  Margin="0,169,0,0" TextWrapping="Wrap" Text="Nume de utilizator" Padding="3" TextAlignment="Left" BorderBrush="Tan"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="250" Height="25" PreviewMouseLeftButtonDown="UsernameBox_PreviewMouseLeftButtonDown"/>
+            <TextBox x:Name="PasswordBox"  Margin="0,199,0,0" TextWrapping="Wrap" Text="Parola" Padding="3" TextAlignment="Left" BorderBrush="Tan"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="250" Height="25" PreviewMouseLeftButtonDown="PasswordBox_PreviewMouseLeftButtonDown"/>
+            <Button x:Name="LoginButton" Content="Conectare" HorizontalAlignment="Center" BorderBrush="Tan" Foreground="Tan" Background="Black" Margin="0,235,0,0" VerticalAlignment="Top"  Width="132" Height="25" Click="LoginButton_Click" />
+            <Label x:Name="ErrorMessageLabel" Content="Invalid username or password." Margin="0,270,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="250" Height="25" Foreground="Red" Visibility="Collapsed" />
+        </Grid>
+
+        <Grid x:Name="WordSearchPanel" Visibility="Collapsed">
+            <Label x:Name="InputLabel" FontSize="28" FontFamily="Microsoft Sans Serif" FontWeight="ExtraBold"  VerticalAlignment="Top" HorizontalAlignment="Center"  Margin="0,34,0,0" Content="Dicționar explicativ" Width="262" Height="54" />
+            <TextBox x:Name="InputBox"  Margin="221,115,0,0" TextWrapping="Wrap" Text="Caută cuvânt" Padding="3" TextAlignment="Left" BorderBrush="Tan"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="310" Height="25" PreviewMouseLeftButtonDown="InputBox_PreviewMouseLeftButtonDown"/>
+            <Button x:Name="InputButton" Content="Caută" HorizontalAlignment="Left" BorderBrush="Tan" Foreground="Tan" Background="Black" Margin="538,115,0,0" VerticalAlignment="Top"  Width="60" Height="25" Click="InputButton_Click"/>
+            <TextBox x:Name="ResultBox" HorizontalAlignment="Center" BorderBrush="Tan" Margin="0,164,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="600" Height="200"/>
+        </Grid>
+
+        <Grid x:Name="DictionaryManagerPanel" Visibility="Collapsed">
+
+        </Grid>
+
+        <Grid x:Name="EntertainmentPanel" Visibility="Collapsed">
+
+        </Grid>
     </Grid>
 </Window>

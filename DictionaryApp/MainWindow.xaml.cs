@@ -20,6 +20,8 @@ namespace DictionaryApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly string _adminUsername = "admin";
+        private readonly string _userUsername = "user";
         public MainWindow()
         {
             InitializeComponent();
@@ -55,9 +57,55 @@ namespace DictionaryApp
             }
         }
 
-        private void InputButton_Click_1(object sender, RoutedEventArgs e)
+        private void InputBox_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            TextBox textBox = sender as TextBox;
 
+            if (textBox != null)
+            {
+                textBox.Text = string.Empty;
+            }
+        }
+
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            string username = UsernameBox.Text;
+            string password = PasswordBox.Text;
+
+            if (username == _adminUsername && password == "0000")
+            {
+                DictionaryManagerPanel.Visibility = Visibility.Visible;
+                AuthentificationPanel.Visibility = Visibility.Hidden;
+            }
+            else if (username == _userUsername && password == "0000") 
+            {
+                WordSearchPanel.Visibility = Visibility.Visible;
+                AuthentificationPanel.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                ErrorMessageLabel.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void PasswordBox_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+
+            if (textBox != null)
+            {
+                textBox.Text = string.Empty;
+            }
+        }
+
+        private void UsernameBox_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+
+            if (textBox != null)
+            {
+                textBox.Text = string.Empty;
+            }
         }
     }
 }
