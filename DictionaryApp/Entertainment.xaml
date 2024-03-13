@@ -18,6 +18,7 @@
         </LinearGradientBrush>
     </Window.Resources>
     <Grid>
+        <Button x:Name="ExitButton" Content="←" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" BorderBrush="Beige" Background="{StaticResource WindowBackgroundBrush}" Click="ExitButton_Click"/>
         <Grid x:Name="EntertainmentPanel" Visibility="Collapsed">
 
         </Grid>

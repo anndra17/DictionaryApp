@@ -19,17 +19,17 @@
         </LinearGradientBrush>
     </Window.Resources>
     <Grid>
+        <Button x:Name="ExitButton" Content="←" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" BorderBrush="Beige" Background="{StaticResource WindowBackgroundBrush}" Click="ExitButton_Click"/>
         <Grid x:Name="AuthentificationPanel" Visibility="Visible">
-
-            <Label x:Name="AuthentificationLabel" FontSize="28" FontFamily="Microsoft Sans Serif" FontWeight="ExtraBold"  VerticalAlignment="Top" HorizontalAlignment="Center" Content="Autentificare" Width="174" Height="54" Margin="0,55,0,0" />
+            <Image x:Name="LoginTitle" Width="253" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,42,0,0" Source="C:\Users\andra\Documents\Facultate\II\sem II\MVP\Teme\RezolvariTeme\DictionaryApp\DictionaryApp\Resources\login-title.png"/>
             <TextBlock x:Name="UsernameTxt" HorizontalAlignment="Center" Margin="0,122,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="108"><Run Text="Nume de utilizator"/><Run Language="ro-ro" Text=":"/></TextBlock>
             <TextBox x:Name="UsernameBox"  Margin="0,143,0,0" TextWrapping="Wrap" Padding="3" TextAlignment="Left" BorderBrush="Tan"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="250" Height="25" PreviewMouseLeftButtonDown="UsernameBox_PreviewMouseLeftButtonDown"/>
 
             <TextBlock x:Name="PasswordTxt" HorizontalAlignment="Center" Margin="0,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="36"><Run Text="Parol"/><Run Text="ă"/><Run Language="ro-ro" Text=":"/></TextBlock>
             <PasswordBox x:Name="PasswordBox" HorizontalAlignment="Center" VerticalAlignment="Top"  Width="250" Height="24" BorderBrush="Tan" PreviewMouseLeftButtonDown="PasswordBox_PreviewMouseLeftButtonDown" Margin="0,193,0,0"/>
 
-            <Button x:Name="LoginButton" Content="Conectare" HorizontalAlignment="Center" BorderBrush="Tan" Foreground="Tan" Background="Black" Margin="0,233,0,0" VerticalAlignment="Top"  Width="132" Height="24" Click="LoginButton_Click" />
-            <Label x:Name="ErrorMessageLabel" Content="Invalid username or password." Margin="0,270,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="250" Height="25" Foreground="Red" Visibility="Collapsed" />
+            <Button x:Name="LoginButton" Content="Conectare" HorizontalAlignment="Center" BorderBrush="Tan" Foreground="Tan" Background="Black" Margin="0,233,0,0" VerticalAlignment="Top"  Width="132" Height="24" Click="LoginButton_Click"  />
+            <Label x:Name="ErrorMessageLabel" Content="Nume de utilizator sau parolă greșite." Margin="0,270,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="250" Height="30" Foreground="Maroon" Visibility="Hidden" />
         </Grid>
 
         <Grid x:Name="DictionaryManagerPanel" Visibility="Collapsed">

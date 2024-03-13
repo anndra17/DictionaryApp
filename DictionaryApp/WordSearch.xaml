@@ -17,12 +17,13 @@
             <GradientStop Offset="1" Color="tan"/>
         </LinearGradientBrush>
     </Window.Resources>
-        <Grid>
+    <Grid>
+        <Button x:Name="ExitButton" Content="←" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" BorderBrush="Beige" Background="{StaticResource WindowBackgroundBrush}" Click="ExitButton_Click"/>
         <Grid x:Name="WordSearchPanel" Visibility="Visible">
-            <Label x:Name="InputLabel" FontSize="28" FontFamily="Microsoft Sans Serif" FontWeight="ExtraBold"  VerticalAlignment="Top" HorizontalAlignment="Center"  Margin="0,34,0,0" Content="Dicționar explicativ" Width="262" Height="54" />
-            <TextBox x:Name="InputBox"  Margin="221,115,0,0" TextWrapping="Wrap" Text="Caută cuvânt" Padding="3" TextAlignment="Left" BorderBrush="Tan"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="310" Height="25" PreviewMouseLeftButtonDown="InputBox_PreviewMouseLeftButtonDown"/>
-            <Button x:Name="InputButton" Content="Caută" HorizontalAlignment="Left" BorderBrush="Tan" Foreground="Tan" Background="Black" Margin="538,115,0,0" VerticalAlignment="Top"  Width="60" Height="25" Click="InputButton_Click"/>
-            <TextBox x:Name="ResultBox" HorizontalAlignment="Center" BorderBrush="Tan" Margin="0,164,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="600" Height="200"/>
+            <Image x:Name="DexTitle" Width="357" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="218,26,0,0" Source="C:\Users\andra\Documents\Facultate\II\sem II\MVP\Teme\RezolvariTeme\DictionaryApp\DictionaryApp\Resources\wordSearch-title.png"/>
+            <TextBox x:Name="InputBox"  Margin="210,115,0,0" TextWrapping="Wrap" Text="Caută cuvânt" Padding="3" TextAlignment="Left" BorderBrush="Tan"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="310" Height="25" PreviewMouseLeftButtonDown="InputBox_PreviewMouseLeftButtonDown"/>
+            <Button x:Name="InputButton" Content="Caută" HorizontalAlignment="Left" BorderBrush="Tan" Foreground="Tan" Background="Black" Margin="530,115,0,0" VerticalAlignment="Top"  Width="60" Height="25" Click="InputButton_Click"/>
+            <TextBox x:Name="ResultBox" HorizontalAlignment="Center" AllowDrop="False" BorderBrush="Tan" Margin="0,164,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="600" Height="200"/>
         </Grid>
     </Grid>
 </Window>

@@ -29,13 +29,14 @@
 
     <Grid>
         <Grid x:Name="MainPanel" Visibility="Visible">
-            <Image x:Name="AdminIcon" Width="50" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="164,93,0,0" Source="C:\Users\andra\Documents\Facultate\II\sem II\MVP\Teme\RezolvariTeme\DictionaryApp\DictionaryApp\Resources\admin2-icon.png"/>
-            <Image x:Name="WordSearchIcon" Width="60" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="384,88,0,0" Source="C:\Users\andra\Documents\Facultate\II\sem II\MVP\Teme\RezolvariTeme\DictionaryApp\DictionaryApp\Resources\wordSearch-icon.png"/>
-            <Image x:Name="EntertainmentIcon" Width="50" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="615,93,0,0" Source="C:\Users\andra\Documents\Facultate\II\sem II\MVP\Teme\RezolvariTeme\DictionaryApp\DictionaryApp\Resources\entertainment-icon.png"/>
+            <Image x:Name="MainTitle" Width="363" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="218.5,26,0,0" Source="C:\Users\andra\Documents\Facultate\II\sem II\MVP\Teme\RezolvariTeme\DictionaryApp\DictionaryApp\Resources\mainTitle.png"/>
+            <Image x:Name="AdminIcon" Width="50" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="164,200,0,0" Source="C:\Users\andra\Documents\Facultate\II\sem II\MVP\Teme\RezolvariTeme\DictionaryApp\DictionaryApp\Resources\admin2-icon.png"/>
+            <Image x:Name="WordSearchIcon" Width="60" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="384,195,0,0" Source="C:\Users\andra\Documents\Facultate\II\sem II\MVP\Teme\RezolvariTeme\DictionaryApp\DictionaryApp\Resources\wordSearch-icon.png"/>
+            <Image x:Name="EntertainmentIcon" Width="50" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="615,200,0,0" Source="C:\Users\andra\Documents\Facultate\II\sem II\MVP\Teme\RezolvariTeme\DictionaryApp\DictionaryApp\Resources\entertainment-icon.png"/>
 
-            <Button Content="Administrator" BorderBrush="Tan" Foreground="Black" Background="{StaticResource ButtonsBackgroundBrush}" HorizontalAlignment="Left" Margin="99,143,0,0" VerticalAlignment="Top" Height="200" Width="170" Click="Admin_Button_Click"/>
-            <Button Content="Căutare Cuvinte" BorderBrush="Tan" Foreground="Black" Background="{StaticResource ButtonsBackgroundBrush}" HorizontalAlignment="Left" Margin="328,143,0,0" VerticalAlignment="Top" Height="200" Width="170" Click="WordSearch_Button_Click" />
-            <Button Content="Divertisment" BorderBrush="Tan"  Foreground="Black" Background="{StaticResource ButtonsBackgroundBrush}" HorizontalAlignment="Left" Margin="553,143,0,0" VerticalAlignment="Top" Height="200" Width="170" Click="Entertainment_Button_Click"/>
+            <Button Content="Administrator" BorderBrush="Tan" Foreground="Black" Background="{StaticResource ButtonsBackgroundBrush}" HorizontalAlignment="Left" Margin="99,250,0,0" VerticalAlignment="Top" Height="40" Width="170" Click="Admin_Button_Click"/>
+            <Button Content="Căutare Cuvinte" BorderBrush="Tan" Foreground="Black" Background="{StaticResource ButtonsBackgroundBrush}" HorizontalAlignment="Left" Margin="328,250,0,0" VerticalAlignment="Top" Height="40" Width="170" Click="WordSearch_Button_Click" />
+            <Button Content="Divertisment" BorderBrush="Tan"  Foreground="Black" Background="{StaticResource ButtonsBackgroundBrush}" HorizontalAlignment="Left" Margin="553,250,0,0" VerticalAlignment="Top" Height="40" Width="170" Click="Entertainment_Button_Click"/>
         </Grid>
     </Grid>
 </Window>
