@@ -26,9 +26,35 @@ namespace DictionaryApp
         {
             InitializeComponent();
             Account account = new Account();
+        }
+
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(AddWordsPanel.Visibility == Visibility.Visible)
+            {
+                AddWordsPanel.Visibility = Visibility.Hidden;
+                ChooseAction.Visibility = Visibility.Visible;
+            }
+            else if (DeleteWordsPanel.Visibility == Visibility.Visible)
+            {
+                DeleteWordsPanel.Visibility = Visibility.Hidden;
+                ChooseAction.Visibility = Visibility.Visible;
+            }
+            else if (EditWordsPanel.Visibility == Visibility.Visible)
+            {
+                EditWordsPanel.Visibility = Visibility.Hidden;
+                ChooseAction.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                this.Close();
+            }
             
         }
 
+        //Autenthification
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
             Username = UsernameBox.Text;
@@ -42,7 +68,7 @@ namespace DictionaryApp
             {
                 if (account.Username == Username && account.Password == Password)
                 {
-                    DictionaryManagerPanel.Visibility = Visibility.Visible;
+                    ChooseAction.Visibility = Visibility.Visible;
                     AuthentificationPanel.Visibility = Visibility.Hidden;
                     break;
                 }
@@ -73,14 +99,8 @@ namespace DictionaryApp
             }
         }
 
-        private void ExitButton_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();
-        }
-
-        private void UploadButton_Click(object sender, RoutedEventArgs e)
+        //Dictionary Manager
+        private void UploadImageButton_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
 
@@ -106,25 +126,6 @@ namespace DictionaryApp
                 }
             }
 
-        }
-
-        private void UploadWordButton_Click(object sender, RoutedEventArgs e)
-        {
-            string word = WordTextBox.Text;
-            string description = DescriptionTextBox.Text;
-            string category = CategoryTextBox.Text;
-            string image = imagePath;
-
-            WordsManager manager = new WordsManager();
-            manager.AddWord(category,word,description,image);
-
-            WordTextBox.Text = string.Empty;
-            DescriptionTextBox.Text = string.Empty;
-            imagePath = string.Empty;
-            WordsImage.Visibility = Visibility.Hidden;
-            CategoryTextBox.Text = string.Empty;
-
-            System.Windows.MessageBox.Show("Felicitări! Cuvântul a fost adăugat.", "Mesaj de Validare", MessageBoxButton.OK);
         }
 
         private void CategoryTextBox_GotFocus(object sender, RoutedEventArgs e)
@@ -157,6 +158,44 @@ namespace DictionaryApp
         private void CategoryTextBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
         
+        }
+
+        private void UploadWordButton_Click(object sender, RoutedEventArgs e)
+        {
+            string word = WordTextBox.Text;
+            string description = DescriptionTextBox.Text;
+            string category = CategoryTextBox.Text;
+            string image = imagePath;
+
+            WordsManager manager = new WordsManager();
+            manager.AddWord(category, word, description, image);
+
+            WordTextBox.Text = string.Empty;
+            DescriptionTextBox.Text = string.Empty;
+            imagePath = string.Empty;
+            WordsImage.Visibility = Visibility.Hidden;
+            CategoryTextBox.Text = string.Empty;
+
+            System.Windows.MessageBox.Show("Felicitări! Cuvântul a fost adăugat.", "Mesaj de Validare", MessageBoxButton.OK);
+        }
+
+        private void AddWordsButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+            AddWordsPanel.Visibility = Visibility.Visible;
+            ChooseAction.Visibility = Visibility.Hidden;
+        }
+
+        private void DeleteWordsButton_Click(object sender, RoutedEventArgs e)
+        {
+            DeleteWordsPanel.Visibility = Visibility.Visible;
+            ChooseAction.Visibility = Visibility.Hidden;
+        }
+
+        private void EditWordsButton_Click(object sender, RoutedEventArgs e)
+        {
+            EditWordsPanel.Visibility = Visibility.Visible;
+            ChooseAction.Visibility = Visibility.Hidden;
         }
     }
 }

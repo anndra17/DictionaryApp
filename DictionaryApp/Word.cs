@@ -40,7 +40,37 @@ namespace DictionaryApp
             }
         }
 
-       
+        public void EditWord(Word oldWord)
+        {
+            string filepath = "C:\\Users\\andra\\Documents\\Facultate\\II\\sem II\\MVP\\Teme\\RezolvariTeme\\DictionaryApp\\DictionaryApp\\Resources\\files\\Words.txt";
+            string tempFile = "C:\\Users\\andra\\Documents\\Facultate\\II\\sem II\\MVP\\Teme\\RezolvariTeme\\DictionaryApp\\DictionaryApp\\Resources\\files\\tempFile.txt";
+
+            try
+            {
+                using (StreamReader reader = new StreamReader(filepath))
+                {
+                    using (StreamWriter writer = new StreamWriter(tempFile))
+                    {
+                        string line;
+                        while ((line = reader.ReadLine()) != null)
+                        {
+                            if (line.Contains(oldWord._word))
+                            {
+                                line = category + "*" + _word + "*" + description + "*" + imagePath;
+                            }
+                            writer.WriteLine(line);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Eroare la editarea cuvantului! ", ex);
+            }
+
+            File.Delete(filepath);
+            File.Move(tempFile, filepath);
+        }
     }
 } 
 
