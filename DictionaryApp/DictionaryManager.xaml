@@ -8,7 +8,7 @@
         WindowStartupLocation="CenterScreen"
         Topmost="True"
         Language="ro"
-        Icon="C:\Users\andra\Documents\Facultate\II\sem II\MVP\Teme\RezolvariTeme\DictionaryApp\DictionaryApp\Resources\admin-icon.png"
+        Icon="C:\Users\andra\Documents\Facultate\II\sem II\MVP\Teme\RezolvariTeme\DictionaryApp\DictionaryApp\Resources\icons\admin-icon.png"
         Title="Administrare" Height="450" Width="800"
         Background="{DynamicResource WindowBackgroundBrush}">
 
@@ -17,11 +17,19 @@
             <GradientStop Offset="0" Color="Beige"/>
             <GradientStop Offset="1" Color="tan"/>
         </LinearGradientBrush>
+        <LinearGradientBrush x:Key="ButtonBackgroundBrush">
+            <GradientStop Offset="0" Color="tan"/>
+            <GradientStop Offset="1" Color="Beige"/>
+        </LinearGradientBrush>
     </Window.Resources>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="321*"/>
+            <RowDefinition Height="113*"/>
+        </Grid.RowDefinitions>
         <Button x:Name="ExitButton" Content="←" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" BorderBrush="Beige" Background="{StaticResource WindowBackgroundBrush}" Click="ExitButton_Click"/>
-        <Grid x:Name="AuthentificationPanel" Visibility="Visible">
-            <Image x:Name="LoginTitle" Width="253" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,42,0,0" Source="C:\Users\andra\Documents\Facultate\II\sem II\MVP\Teme\RezolvariTeme\DictionaryApp\DictionaryApp\Resources\login-title.png"/>
+        <Grid x:Name="AuthentificationPanel" Visibility="Hidden" Grid.RowSpan="2">
+            <Image x:Name="LoginTitle" Width="253" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,42,0,0" Source="C:\Users\andra\Documents\Facultate\II\sem II\MVP\Teme\RezolvariTeme\DictionaryApp\DictionaryApp\Resources\titles\login-title.png"/>
             <TextBlock x:Name="UsernameTxt" HorizontalAlignment="Center" Margin="0,122,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="108"><Run Text="Nume de utilizator"/><Run Language="ro-ro" Text=":"/></TextBlock>
             <TextBox x:Name="UsernameBox"  Margin="0,143,0,0" TextWrapping="Wrap" Padding="3" TextAlignment="Left" BorderBrush="Tan"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="250" Height="25" PreviewMouseLeftButtonDown="UsernameBox_PreviewMouseLeftButtonDown"/>
 
@@ -32,7 +40,43 @@
             <Label x:Name="ErrorMessageLabel" Content="Nume de utilizator sau parolă greșite." Margin="0,270,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="250" Height="30" Foreground="Maroon" Visibility="Hidden" />
         </Grid>
 
-        <Grid x:Name="DictionaryManagerPanel" Visibility="Collapsed">
+        <Grid x:Name="DictionaryManagerPanel" Visibility="Visible" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50px"/>
+                <ColumnDefinition Width="100px"/>
+                <ColumnDefinition Width="200px"/>
+                <ColumnDefinition Width="25px"/>
+                <ColumnDefinition Width="375px"/>
+                <ColumnDefinition Width="50px"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80px"/>
+                <!--1-->
+                <RowDefinition Height="25px"/>
+                <!--2 categorie-->
+                <RowDefinition Height="25px"/>
+                <!--3-->
+                <RowDefinition Height="25px"/>
+                <!--4 cuvant-->
+                <RowDefinition Height="25px"/>
+                <!--5-->
+                <RowDefinition Height="150"/>
+                <!--6 descriere-->
+                <RowDefinition Height="104.04"/>
+                <RowDefinition Height="5.96"/>
+                <!--7-->
+            </Grid.RowDefinitions>
+            <Label Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="0" Content="Adăugare cuvinte" HorizontalContentAlignment="Center" Margin="00 20 90 0" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold"/>
+            <Label Grid.Column="1" VerticalAlignment="Top" Content="Categorie" Margin="0,54,0,0" />
+            <TextBox x:Name="CategoryTextBox" Grid.Column="1" Grid.Row="1" BorderBrush="Tan" TextAlignment="Justify" VerticalContentAlignment="Center" Height="20" Width="90" Margin="5,2,5,3" GotFocus="CategoryTextBox_GotFocus" MouseDoubleClick="CategoryTextBox_MouseDoubleClick"/>
+            <ComboBox x:Name="CategoryComboBox" Grid.Column="1" Grid.Row="1" Background="White" BorderBrush="Tan" Height="20" Width="90" Margin="5,2,5,3" Visibility="Collapsed" SelectionChanged="CategoryComboBox_SelectionChanged"/>
+            <Label Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Content="Nume"/>
+            <TextBox x:Name="WordTextBox" Grid.Column="1" Grid.Row="3" BorderBrush="Tan" TextAlignment="Justify" VerticalContentAlignment="Center" Height="20" Width="90" Margin="5,2,5,3"/>
+            <Label Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Content="Descriere"/>
+            <TextBox x:Name="DescriptionTextBox" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" TextWrapping="Wrap" BorderBrush="Tan" TextAlignment="Justify" Width="290" Margin="5,0,5,0"/>
+            <Button x:Name="UploadImageButton" Grid.Column="4" Grid.Row="1" Content="Adaugă imagine" Width="100px" Click="UploadButton_Click" BorderBrush="Tan" Background="{StaticResource ButtonBackgroundBrush}" Margin="137,0,138,0" />
+            <Image x:Name="WordsImage" Margin="10,10,10,10" Grid.Column="4" Grid.Row="2" Grid.RowSpan="4" Visibility="Hidden" Panel.ZIndex="1" />
+            <Button x:Name="UploadWordButton" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="6" Height="40" Width="500" BorderBrush="Tan" Background="{StaticResource ButtonBackgroundBrush}" Content="Adaugă cuvânt" VerticalAlignment="Top" Margin="0,20,100,0" Click="UploadWordButton_Click"/>
 
         </Grid>
     </Grid>

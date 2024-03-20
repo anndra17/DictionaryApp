@@ -8,7 +8,7 @@
         WindowStartupLocation="CenterScreen"
         Topmost="True"
         Language="ro"
-        Icon="C:\Users\andra\Documents\Facultate\II\sem II\MVP\Teme\RezolvariTeme\DictionaryApp\DictionaryApp\Resources\entertainment-icon.png"
+        Icon="C:\Users\andra\Documents\Facultate\II\sem II\MVP\Teme\RezolvariTeme\DictionaryApp\DictionaryApp\Resources\icons\entertainment-icon.png"
         Title="Divertisment" Height="450" Width="800"
         Background="{DynamicResource WindowBackgroundBrush}">
     <Window.Resources>

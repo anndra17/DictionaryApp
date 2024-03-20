@@ -61,18 +61,16 @@
     <Compile Include="Entertainment.xaml.cs">
       <DependentUpon>Entertainment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Word.cs" />
     <Compile Include="WordSearch.xaml.cs">
       <DependentUpon>WordSearch.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WordsManager.cs" />
     <Page Include="DictionaryManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Entertainment.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="GlobalResources.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
